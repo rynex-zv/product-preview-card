@@ -123,6 +123,7 @@ main .card-body .item-type {
   font-size: 10px;
 }
 main .card-body > h1 {
+  font-size: 29px;
   font-family: var(--F_Fraunces);
   padding-right: 3rem;
   margin-top: 1px;
