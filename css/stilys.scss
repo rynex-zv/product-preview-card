@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+
+:root {
+    //? Primary hsl
+    --P_DarkCyan: hsl(158, 36%, 37%);
+    --P_Cream: hsl(208, 14%, 74%);
+
+    //? Neutral hsl
+    --N_VeryDarkBlue: hsl(212, 21%, 14%);
+    --N_DarkGrayishBlue: hsl(229, 21%, 40%);
+    --N_White: hsl(195, 50%, 92%);
+
+    //? Fonts
+    --F_Fraunces: "Fraunces", serif;
+    --F_Montserrat: "Montserrat", sans-serif;
+    font-size: 14px;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 1.11rem);
+    background-color: var(--P_Cream);
+}
+.card-btn {
+    & span {
+        position: relative;
+        top: -0.5em;
+    }
+}
+.btn-svg {
+    position: relative;
+    display: inline-block;
+    top: 0.2em;
+    transform: scale(120%);
+    z-index: 1;
+}
+#bag path,
+#cart_2 path {
+    fill: var(--P_DarkCyan);
+    &#cart_2_V {
+        fill: rgb(255, 255, 255);
+    }
+}
+#cart {
+    transform-origin: 40% 70%;
+    #bag {
+        transition: transform 1s ease; 
+
+        transform: translateY(5px);
+        & path {
+            stroke: #ffff;
+        }
+    }
+}
+.card-btn {
+    transition: all 1s ease;
+    &[c="n"] {
+        &:hover {
+          box-shadow: hsl(155, 76%, 43%) 0px 0px 10px 1px;
+          
+             & * #cart {
+                position: relative;
+                transform-origin: 40% 70%;
+                animation: 1s infinite alternate ease-in-out VnVnVn;
+            }
+        }
+    }
+    &[c="y"] {
+        &.card-btn #cart #bag {
+            transform: translateY(0px);
+        }
+        #go path {
+            opacity: 0;
+            animation: 2s alternate ease-in-out WeeeO;
+            stroke: #ffff;
+        }
+        & * #cart {
+            animation: 2s alternate ease-in-out WeeeR;
+        }
+        svg {
+            animation: 2s alternate ease-in-out WeeeT;
+        }
+        & .cart-add::before {
+            background-color: var(--P_DarkCyan);
+            width: 0%; 
+            position: absolute;
+            content: "";
+            height: 100%;
+             animation: 1.5s alternate cubic-bezier(0.31, -0.06, 0.3, 0.97) WeeeA 0.48s;  
+            z-index: 1;
+        }
+    }
+}
+main {
+    margin: auto;
+    display: flex;
+    background-color: var(--N_White);
+    max-width: 600px;
+    max-height: 455px;
+    border-radius: 10px;
+    .card-body {
+        margin-left: auto;
+
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-around;
+        padding-left: 2rem;
+        padding-right: 2rem; 
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+
+        & > * {
+            align-self: flex-start;
+        }
+        .item-type {
+            text-transform: uppercase;
+            font-family: var(--F_Montserrat);
+            color: var(--N_DarkGrayishBlue);
+            letter-spacing: 0.3rem;
+            font-size: 10px;
+        }
+        & > h1 {
+            font-family: var(--F_Fraunces);
+            padding-right: 3rem;
+            margin-top: 1px;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        .item-description {
+            font-size: 1rem;
+            font-family: var(--F_Montserrat);
+            font-weight: 400;
+            color: var(--N_DarkGrayishBlue);
+            line-height: 1.7;
+            margin-top: 14px;
+            margin-bottom: 0px;
+        }
+
+        .item-prise {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+
+            .card-price {
+                color: var(--P_DarkCyan);
+                font-family: var(--F_Fraunces);
+            }
+            .card-oldPrice {
+                text-decoration: line-through;
+                font-family: var(--F_Montserrat);
+                font-weight: 500;
+                color: var(--N_DarkGrayishBlue);
+            }
+        }
+        .card-btn {
+            background-color: var(--P_DarkCyan);
+            border-radius: 0.5em;
+            border: none;
+            width: 100%;
+            padding-bottom: 0.5rem;
+            padding-top: 0.5rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
+
+            font-family: var(--F_Montserrat);
+            font-weight: 500;
+            color: #ffff;
+            .cart-add {
+                z-index: 0;
+                position: relative;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+footer {
+    font-size: 14px;
+    text-align: center;
+    & a {
+        color: hsl(144, 70%, 30%);
+        text-decoration: none;
+    }
+}
+@keyframes VnVnVn {
+    from {
+        transform: rotateZ(-0deg);
+    }
+
+    to {
+        transform: rotateZ(-40deg);
+    }
+}
+@keyframes WeeeT {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(400%);
+    }
+}
+@keyframes WeeeR {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(-20deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+@keyframes WeeeO {
+    0% {
+        opacity: 0;
+        transform: translateX(-4px);
+    }
+    20% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(-0px);
+    }
+    98% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-4px);
+    }
+}
+@keyframes WeeeA {
+  from {
+      width: 0%;
+    }
+
+    to {
+       width: 110%;
+    }
+    
+}
+//! main w=342.5px h=610px
+
+//! img h_240px
+
+@media (width < 401px) {
+    main {
+        flex-flow: column;
+        max-height: 611.5px;
+        max-width: 342.5px;
+        height: 611.5px;
+        width: max-content;
+        & img {
+            position: relative;
+            //  content: url("../images/image-product-mobile.jpg");
+            object-fit: cover;
+            box-sizing: border-box;
+            // left: -9px;
+            height: 240px;
+            width: 100%;
+            object-position: 0px -95px;
+            padding: 0;
+            margin: 0;
+            border-radius: 10px 10px 0 0;
+        }
+        .card-body {
+            padding: 1.8rem;
+            .item-type {
+                margin: -1.1px 0px;
+                margin-bottom: 15px;
+            }
+            .card-btn {
+                padding: 1rem;
+            }
+        }
+    }
+}
+@media (width > 400px) {
+    .card-img {
+        width: 300px;
+        border-radius: 10px 0px 0 10px;
+    }
+}
