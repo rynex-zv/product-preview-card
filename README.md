@@ -28,12 +28,12 @@ Users should be able to:
 
 ### Screenshot
 
-![OverView](./screenshot.jpg)
+![OverView](./Screenshot.jpg)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live](https://rynex-zv.github.io/product-preview-card/)
 
 ## My process
 
